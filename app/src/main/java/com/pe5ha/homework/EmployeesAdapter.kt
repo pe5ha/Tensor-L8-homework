@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -31,7 +32,7 @@ class EmployeesAdapter(private val deleteAction: (Int) -> Unit) :
         when (viewType) {
             EMPLOYEE_TYPE -> {
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.emloyees_list_item, parent, false)
+                    .inflate(R.layout.emloyees_card_item, parent, false)
                 return EmployeeViewHolder(view)
             }
             DEPARTMENT_TYPE -> {
@@ -76,9 +77,16 @@ class EmployeesAdapter(private val deleteAction: (Int) -> Unit) :
         }
     }
 
-    fun reload(data: List<Any>) {
+    fun getData(): MutableList<Any> {
+        return employees
+    }
+
+    fun setData(data: List<Any>) {
         employees.clear()
         employees.addAll(data)
-        notifyDataSetChanged()
     }
+
+
+
+
 }

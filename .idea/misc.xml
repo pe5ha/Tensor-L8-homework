@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/drawable-v24/gradient.xml" value="0.181" />
+        <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1155" />
+        <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1155" />
+        <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1155" />
+        <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/drawable/item_divider.xml" value="0.1155" />
         <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/layout/department_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/layout/emloyees_card_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/pavel/AndroidStudioProjects/TensorL8homework/app/src/main/res/layout/emloyees_list_item.xml" value="0.4" />
       </map>
     </option>

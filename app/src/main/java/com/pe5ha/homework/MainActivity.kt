@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-        employeesAdapter = EmployeesAdapter(viewModel::deleteEmployee)
+        employeesAdapter = EmployeesAdapter(viewModel::deleteEmployee, viewModel::likeEmployee)
         recyclerView.adapter = employeesAdapter
 
         val dividerItemDecoration = DividerItemDecoration(
@@ -86,6 +86,7 @@ class MainActivity : AppCompatActivity() {
                         && oldItem.department == newItem.department
                         && oldItem.fullName == newItem.fullName
                         && oldItem.photoUrl == newItem.photoUrl
+                        && oldItem.liked == newItem.liked
                     ) return true
                     return false
                 }

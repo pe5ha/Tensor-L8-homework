@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,7 +13,7 @@ import com.bumptech.glide.Glide
 const val EMPLOYEE_TYPE = 1
 const val DEPARTMENT_TYPE = 2
 
-class EmployeesAdapter(private val deleteAction: (Int) -> Unit) :
+class EmployeesAdapter(private val deleteAction: (Int) -> Unit, private val likeAction: (Int) -> Unit) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val employees = mutableListOf<Any>()
@@ -22,6 +23,7 @@ class EmployeesAdapter(private val deleteAction: (Int) -> Unit) :
         val fullnameTextView: TextView = itemView.findViewById(R.id.fullnameView)
         val departmentTextView: TextView = itemView.findViewById(R.id.departmentView)
         val deleteButtonView: ImageView = itemView.findViewById(R.id.deleteItemView)
+        val likeButtonView: ImageView = itemView.findViewById(R.id.like_button)
     }
 
     class DepartmentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -52,12 +54,18 @@ class EmployeesAdapter(private val deleteAction: (Int) -> Unit) :
                 val employee = employees[position] as Employee
                 holder.fullnameTextView.text = employee.fullName
                 holder.departmentTextView.text = employee.department
+                if (employee.liked) holder.likeButtonView.setBackgroundResource(R.drawable.ic_baseline_favorite_24)
+                else holder.likeButtonView.setBackgroundResource(R.drawable.ic_baseline_favorite_border_24)
                 Glide.with(holder.photoImageView.context)
                     .load(employee.photoUrl)
                     .centerCrop()
                     .into(holder.photoImageView)
                 holder.deleteButtonView.setOnClickListener {
                     deleteAction(position)
+                }
+                holder.likeButtonView.setOnClickListener {
+                    likeAction(position)
+                    notifyItemChanged(position)
                 }
             }
             is DepartmentViewHolder -> {

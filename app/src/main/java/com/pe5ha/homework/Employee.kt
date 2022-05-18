@@ -4,7 +4,8 @@ data class Employee(
     val id: Long,
     val fullName: String,
     val photoUrl: String,
-    val department: String
+    val department: String,
+    var liked: Boolean = false
 ) {
     companion object{
         fun getMockEmployees() = listOf(

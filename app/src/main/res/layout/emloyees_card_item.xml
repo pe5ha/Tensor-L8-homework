@@ -54,4 +54,12 @@
         app:layout_constraintEnd_toEndOf="@+id/avatarView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <ImageView
+        android:id="@+id/like_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/avatarView"
+        app:layout_constraintEnd_toEndOf="@+id/avatarView"
+        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

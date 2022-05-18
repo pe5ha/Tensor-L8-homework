@@ -23,4 +23,10 @@ class MainActivityViewModel : ViewModel() {
         }
     }
 
+    fun likeEmployee(position: Int) {
+        employees.value = employees.value?.toMutableList()?.apply {
+            (get(position) as Employee).liked = !(get(position) as Employee).liked
+        }
+    }
+
 }
